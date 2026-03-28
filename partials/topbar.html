@@ -1,14 +1,10 @@
 <header class="topbar">
   <a class="brand" href="#home">CK</a>
-  <nav aria-label="Primary navigation">
-    <a href="#home">Overview</a>
-    <a href="#outcomes">Results</a>
-    <a href="#work">Projects</a>
-    <a href="#homelab">Homelab</a>
-    <a href="#stack">Stack</a>
-    <a href="#journey">Experience</a>
-    <a href="#connect">Connect</a>
-  </nav>
+  <div class="breadcrumbs" aria-live="polite">
+    <span class="crumb-label">Viewing</span>
+    <strong id="current-breadcrumb">Overview</strong>
+    <span class="switch-command" id="switch-command">~$ cd /home</span>
+  </div>
   <div class="topbar-actions">
     <a
       class="mini-btn"
@@ -18,5 +14,42 @@
       >LinkedIn</a
     >
     <a class="mini-btn" href="ChinmayResume.pdf" download>Resume</a>
+    <button
+      class="menu-toggle"
+      type="button"
+      id="menu-toggle"
+      aria-expanded="false"
+      aria-controls="section-menu"
+      aria-label="Open sections menu"
+    >
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
+
+<aside id="section-menu" class="section-menu" aria-label="Sections" hidden>
+  <div class="section-menu-head">
+    <p>Sections</p>
+    <button type="button" class="menu-close" id="menu-close" aria-label="Close sections menu">Close</button>
+  </div>
+  <nav class="section-menu-nav">
+    <button type="button" data-section-target="home">Overview</button>
+    <button type="button" data-section-target="profile">Profile</button>
+    <button type="button" data-section-target="outcomes">Results</button>
+    <button type="button" data-section-target="work">Projects</button>
+    <button type="button" data-section-target="homelab">Homelab</button>
+    <button type="button" data-section-target="about">How I Work</button>
+    <button type="button" data-section-target="stack">Stack</button>
+    <button type="button" data-section-target="journey">Experience</button>
+    <button type="button" data-section-target="education">Education</button>
+    <button type="button" data-section-target="connect">Connect</button>
+  </nav>
+</aside>
+
+<button
+  type="button"
+  class="menu-backdrop"
+  id="menu-backdrop"
+  aria-label="Close sections menu backdrop"
+  hidden
+></button>

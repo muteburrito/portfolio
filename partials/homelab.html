@@ -1,36 +1,107 @@
 <section id="homelab" class="section-card reveal homelab">
   <div class="homelab-head">
-    <h2>Homelab (In Progress)</h2>
-    <span class="status-pill">Under Construction</span>
+    <h2>Homelab Infrastructure</h2>
+    <span class="status-pill">Active</span>
   </div>
 
   <p class="section-intro">
-    This is where I will document the infrastructure and experiments that power this website and
-    my platform-engineering practice. I am actively building it and will keep posting updates.
+    This website is hosted from my personal homelab using a secure reverse-tunnel architecture.
+    The setup avoids public IP exposure and traditional port forwarding, while still providing
+    global HTTPS access.
   </p>
 
+    <div class="lab-visual reveal" aria-label="Homelab request path animation">
+      <h3>Live Request Path</h3>
+      <div class="flow-track">
+        <div class="flow-node">Browser</div>
+        <div class="flow-link"></div>
+        <div class="flow-node">Cloudflare Edge</div>
+        <div class="flow-link"></div>
+        <div class="flow-node">Tunnel</div>
+        <div class="flow-link"></div>
+        <div class="flow-node">Fedora + Nginx</div>
+        <div class="flow-link"></div>
+        <div class="flow-node">Portfolio</div>
+        <div class="flow-beam" aria-hidden="true"></div>
+      </div>
+  </div>
+
+  <!-- Component Breakdown -->
   <div class="lab-grid">
     <article class="lab-card reveal">
-      <h3>Current Focus</h3>
+      <h3>Edge Layer</h3>
       <ul>
-        <li>Designing a reliable self-hosting setup for personal projects.</li>
-        <li>Standardizing deployment workflows and service observability.</li>
-        <li>Documenting architecture decisions with practical trade-offs.</li>
+        <li>Cloudflare handles DNS and HTTPS termination.</li>
+        <li>No direct exposure of home network.</li>
+        <li>Traffic proxied securely via tunnel.</li>
       </ul>
     </article>
 
     <article class="lab-card reveal">
-      <h3>Planned Showcase</h3>
+      <h3>Networking</h3>
       <ul>
-        <li>Network and service topology diagram.</li>
-        <li>CI/CD flow from commit to deployment.</li>
-        <li>Monitoring stack, alerts, and uptime snapshots.</li>
-        <li>Monthly updates and learnings log.</li>
+        <li>ISP uses dynamic IP (no static IP).</li>
+        <li>Port forwarding intentionally avoided.</li>
+        <li>Cloudflare Tunnel bypasses CGNAT limitations.</li>
+      </ul>
+    </article>
+
+    <article class="lab-card reveal">
+      <h3>Compute Layer</h3>
+      <ul>
+        <li>Fedora-based home server.</li>
+        <li>Nginx serving static content.</li>
+        <li>SELinux configured for secure access.</li>
+      </ul>
+    </article>
+
+    <article class="lab-card reveal">
+      <h3>Service Exposure</h3>
+      <ul>
+        <li><code>cloudflared</code> runs as a systemd service.</li>
+        <li>Maps public domain → localhost:80.</li>
+        <li>Always-on secure outbound tunnel.</li>
       </ul>
     </article>
   </div>
 
+  <div class="lab-flow reveal">
+    <h3>Request Flow (Simplified)</h3>
+    <ol>
+      <li>User requests <strong>chinmayk.dev</strong></li>
+      <li>Cloudflare resolves DNS and handles HTTPS</li>
+      <li>Request routed through Cloudflare Tunnel</li>
+      <li>Local <code>cloudflared</code> forwards to Nginx</li>
+      <li>Nginx serves static portfolio files</li>
+    </ol>
+  </div>
+
   <div class="lab-log reveal" aria-live="polite">
-    <p><strong>Latest Update:</strong> Homelab page scaffolded. Detailed infra write-up coming soon.</p>
+    <p><strong>Design Decisions:</strong></p>
+    <ul>
+      <li>Avoided exposing home network via port forwarding.</li>
+      <li>Used reverse tunnel architecture for reliability.</li>
+      <li>Offloaded TLS/SSL to Cloudflare edge.</li>
+    </ul>
+  </div>
+
+  <div class="lab-log reveal" aria-live="polite">
+    <p>
+      <strong>Current Build Stage:</strong>
+      Moving this setup toward a containerized platform with CI/CD automation, service-level
+      monitoring, and environment isolation.
+    </p>
+  </div>
+
+  <div class="lab-updates reveal" aria-live="polite">
+    <h3>Update Timeline</h3>
+    <article>
+      <p class="update-tag">Latest</p>
+      <p>Cloudflare tunnel and reverse proxy hardening completed for portfolio traffic.</p>
+    </article>
+    <article>
+      <p class="update-tag">Next</p>
+      <p>Add containerized app deployment workflow with health checks and rollback hooks.</p>
+    </article>
   </div>
 </section>

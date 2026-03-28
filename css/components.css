@@ -12,34 +12,168 @@
   place-items: center;
 }
 
-nav {
-  display: flex;
-  gap: 0.35rem;
-  flex-wrap: wrap;
-}
-
 .topbar-actions {
   display: flex;
   gap: 0.45rem;
   align-items: center;
 }
 
-nav a,
 .mini-btn {
   text-decoration: none;
   font-size: 0.88rem;
   font-weight: 600;
   color: var(--ink-soft);
   padding: 0.36rem 0.62rem;
+  min-height: 2.5rem;
   border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
   transition: color 180ms ease, background-color 180ms ease;
 }
 
-nav a:hover,
-nav a.active,
 .mini-btn:hover {
   color: var(--ink);
   background: rgba(255, 255, 255, 0.09);
+}
+
+.breadcrumbs {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  line-height: 1.2;
+  min-width: 0;
+}
+
+.crumb-label {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  font-size: 0.66rem;
+}
+
+#current-breadcrumb {
+  display: block;
+  font-size: 0.95rem;
+  max-width: 20ch;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.switch-command {
+  display: block;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.66rem;
+  color: #90dfc2;
+  margin-top: 0.15rem;
+  max-width: 24ch;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.menu-toggle {
+  width: 2.75rem;
+  height: 2.75rem;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.24rem;
+  border: 1px solid var(--line-strong);
+  background: rgba(8, 20, 34, 0.72);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 1rem;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--ink);
+  margin: 0 auto;
+}
+
+.section-menu {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  width: min(300px, calc(100vw - 2rem));
+  border: 1px solid var(--line-strong);
+  border-radius: 16px;
+  background: rgba(4, 16, 26, 0.95);
+  backdrop-filter: blur(12px);
+  z-index: 90;
+  padding: 0.8rem;
+  box-shadow: var(--shadow);
+}
+
+.section-menu-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.section-menu-head p {
+  margin: 0;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+}
+
+.menu-close {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 0.38rem 0.72rem;
+  min-height: 2.4rem;
+  cursor: pointer;
+}
+
+.section-menu-nav {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.section-menu-nav button {
+  text-align: left;
+  background: rgba(8, 21, 34, 0.8);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  border-radius: 10px;
+  padding: 0.68rem 0.75rem;
+  min-height: 2.75rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.menu-toggle:focus-visible,
+.menu-close:focus-visible,
+.section-menu-nav button:focus-visible,
+.mini-btn:focus-visible,
+.btn:focus-visible,
+.brand:focus-visible,
+.contact-list a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.section-menu-nav button.active {
+  border-color: rgba(95, 244, 183, 0.7);
+  box-shadow: 0 0 0 1px rgba(95, 244, 183, 0.45) inset;
+}
+
+.menu-backdrop {
+  position: fixed;
+  inset: 0;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  background: rgba(3, 12, 18, 0.55);
+  z-index: 85;
 }
 
 .hero-copy,

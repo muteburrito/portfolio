@@ -176,6 +176,85 @@
   gap: 0.8rem;
 }
 
+.lab-visual {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 0.9rem;
+  background: rgba(7, 18, 29, 0.8);
+}
+
+.lab-visual h3 {
+  margin-bottom: 0.65rem;
+}
+
+.flow-track {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(9, auto);
+  align-items: center;
+  gap: 0.32rem;
+  overflow-x: auto;
+  padding: 0.2rem 0.1rem 0.5rem;
+}
+
+.flow-node {
+  white-space: nowrap;
+  border: 1px solid var(--line);
+  background: rgba(9, 23, 36, 0.9);
+  border-radius: 999px;
+  padding: 0.28rem 0.62rem;
+  font-size: 0.8rem;
+  animation: nodeGlow 2.6s ease-in-out infinite;
+}
+
+.flow-link {
+  width: 24px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(95, 244, 183, 0.8), rgba(54, 184, 255, 0.45));
+}
+
+.flow-beam {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(95, 244, 183, 0.95), rgba(95, 244, 183, 0));
+  transform: translateY(-50%);
+  animation: beamRun 5.8s linear infinite;
+  pointer-events: none;
+}
+
+@media (max-width: 480px) {
+  .lab-visual {
+    padding: 0.72rem;
+  }
+
+  .flow-track {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.36rem;
+    overflow: visible;
+  }
+
+  .flow-link {
+    width: 2px;
+    height: 14px;
+    margin-left: 0.9rem;
+  }
+
+  .flow-node {
+    font-size: 0.74rem;
+    padding: 0.26rem 0.52rem;
+  }
+
+  .flow-beam {
+    display: none;
+  }
+}
+
 .lab-card {
   border: 1px solid var(--line);
   border-radius: 14px;
@@ -203,4 +282,33 @@
 .lab-log p {
   margin: 0;
   color: #cdc3ff;
+}
+
+.lab-updates {
+  margin-top: 0.8rem;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.lab-updates h3 {
+  margin: 0;
+}
+
+.lab-updates article {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(7, 18, 29, 0.75);
+  padding: 0.7rem 0.75rem;
+}
+
+.update-tag {
+  margin: 0;
+  color: var(--accent);
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.lab-updates article p:last-child {
+  margin: 0.25rem 0 0;
 }
