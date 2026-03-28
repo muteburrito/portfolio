@@ -213,3 +213,33 @@ section.cli-enter.cli-enter-active {
     transform: translateX(115%);
   }
 }
+
+@keyframes labPulse {
+  0% {
+    opacity: 0.45;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.45;
+    transform: scale(0.85);
+  }
+}
+
+@keyframes flowStep {
+  0% {
+    color: var(--ink-soft);
+    transform: translateX(0);
+  }
+  35% {
+    color: #bdfde6;
+    transform: translateX(3px);
+  }
+  100% {
+    color: var(--ink-soft);
+    transform: translateX(0);
+  }
+}

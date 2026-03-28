@@ -293,11 +293,25 @@
 }
 
 .lab-card {
+  position: relative;
   border: 1px solid var(--line);
   border-radius: 14px;
   padding: 0.9rem;
   background: rgba(7, 18, 29, 0.75);
   transition: transform 220ms ease, border-color 220ms ease;
+}
+
+.lab-card::before {
+  content: "";
+  position: absolute;
+  top: 0.7rem;
+  right: 0.72rem;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+  animation: labPulse 1.9s ease-in-out infinite;
 }
 
 .lab-card:hover {
@@ -325,6 +339,37 @@
 .lab-log p {
   margin: 0;
   color: #cdc3ff;
+}
+
+.lab-flow ol {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.lab-flow li {
+  position: relative;
+  margin: 0.22rem 0;
+  animation: flowStep 1.8s ease-in-out infinite;
+}
+
+.lab-flow li:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.lab-flow li:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.lab-flow li:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.lab-flow li:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+.lab-flow li:nth-child(5) {
+  animation-delay: 0.8s;
 }
 
 .lab-updates {

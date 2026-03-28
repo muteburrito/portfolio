@@ -68,6 +68,9 @@ export function initSectionRouter({
     desktopTypingTimer = animateTypedText(commandElement, command, 24);
 
     if (mobileCommandElement) {
+      mobileCommandElement.classList.remove('active');
+      // Force reflow so the CSS animation reliably restarts on repeated fast section switches.
+      void mobileCommandElement.offsetWidth;
       mobileCommandElement.classList.add('active');
       mobileTypingTimer = animateTypedText(mobileCommandElement, command, 20, () => {
         mobileHideTimer = window.setTimeout(() => {
