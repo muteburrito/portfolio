@@ -42,6 +42,10 @@
 }
 
 @media (max-width: 760px) {
+  .mobile-switch-shell {
+    display: block;
+  }
+
   .topbar-actions .mini-btn {
     display: none;
   }
@@ -62,6 +66,12 @@
   .principles-grid,
   .stack-groups {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 761px) {
+  .mobile-switch-shell {
+    display: none;
   }
 }
 

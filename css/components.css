@@ -176,6 +176,29 @@
   z-index: 85;
 }
 
+.mobile-switch-shell {
+  position: fixed;
+  left: 0.5rem;
+  right: 0.5rem;
+  top: 4.1rem;
+  z-index: 95;
+  border: 1px solid rgba(95, 244, 183, 0.45);
+  border-radius: 10px;
+  background: rgba(4, 14, 23, 0.92);
+  color: #9cf7d1;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  padding: 0.42rem 0.58rem;
+  min-height: 1.95rem;
+  opacity: 0;
+  transform: translateY(-6px);
+  pointer-events: none;
+}
+
+.mobile-switch-shell.active {
+  animation: mobileShellEnter 1.2s ease forwards;
+}
+
 .hero-copy,
 .hero-panel,
 .section-card,

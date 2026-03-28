@@ -15,6 +15,7 @@ export function initSectionRouter({
   menuButtons,
   breadcrumbElement,
   commandElement,
+  mobileCommandElement,
   menuElement,
   menuToggle,
   menuClose,
@@ -28,23 +29,52 @@ export function initSectionRouter({
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const validIds = new Set(Array.from(sections).map((section) => section.id));
   let activeSectionId = null;
+  let desktopTypingTimer = null;
+  let mobileTypingTimer = null;
+  let mobileHideTimer = null;
 
-  const animateCommand = (targetId) => {
-    if (!commandElement) {
+  const animateTypedText = (element, text, speed, onDone) => {
+    if (!element) {
       return;
     }
 
-    const command = `~$ cd /${targetId}`;
     let idx = 0;
-    commandElement.textContent = '';
-
+    element.textContent = '';
     const timer = window.setInterval(() => {
-      commandElement.textContent = command.slice(0, idx + 1);
+      element.textContent = text.slice(0, idx + 1);
       idx += 1;
-      if (idx >= command.length) {
+      if (idx >= text.length) {
         window.clearInterval(timer);
+        onDone?.();
       }
-    }, 24);
+    }, speed);
+
+    return timer;
+  };
+
+  const animateCommand = (targetId) => {
+    const command = `~$ cd /${targetId}`;
+
+    if (desktopTypingTimer) {
+      window.clearInterval(desktopTypingTimer);
+    }
+    if (mobileTypingTimer) {
+      window.clearInterval(mobileTypingTimer);
+    }
+    if (mobileHideTimer) {
+      window.clearTimeout(mobileHideTimer);
+    }
+
+    desktopTypingTimer = animateTypedText(commandElement, command, 24);
+
+    if (mobileCommandElement) {
+      mobileCommandElement.classList.add('active');
+      mobileTypingTimer = animateTypedText(mobileCommandElement, command, 20, () => {
+        mobileHideTimer = window.setTimeout(() => {
+          mobileCommandElement.classList.remove('active');
+        }, 820);
+      });
+    }
   };
 
   const syncSectionVisibility = (targetId) => {

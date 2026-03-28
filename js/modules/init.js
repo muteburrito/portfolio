@@ -12,6 +12,7 @@ export function initSiteInteractions() {
   const menuButtons = document.querySelectorAll('[data-section-target]');
   const breadcrumbElement = document.getElementById('current-breadcrumb');
   const commandElement = document.getElementById('switch-command');
+  const mobileCommandElement = document.getElementById('mobile-switch-shell');
   const menuElement = document.getElementById('section-menu');
   const menuToggle = document.getElementById('menu-toggle');
   const menuClose = document.getElementById('menu-close');
@@ -22,6 +23,7 @@ export function initSiteInteractions() {
     menuButtons,
     breadcrumbElement,
     commandElement,
+    mobileCommandElement,
     menuElement,
     menuToggle,
     menuClose,

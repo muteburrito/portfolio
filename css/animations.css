@@ -170,3 +170,46 @@ section.cli-enter.cli-enter-active {
     opacity: 0;
   }
 }
+
+@keyframes mobileShellEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes linkPulse {
+  0% {
+    opacity: 0.35;
+    transform: scaleX(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+  100% {
+    opacity: 0.35;
+    transform: scaleX(0.9);
+  }
+}
+
+@keyframes updateSweep {
+  from {
+    transform: translateX(-110%);
+  }
+  to {
+    transform: translateX(115%);
+  }
+}
