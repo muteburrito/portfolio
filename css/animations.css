@@ -1,0 +1,67 @@
+.reveal {
+  opacity: 0;
+  transform: translateY(12px) scale(0.986);
+  filter: blur(6px);
+  clip-path: inset(0 0 20% 0);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+  clip-path: inset(0 0 0 0);
+  transition: opacity 480ms ease, transform 520ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    filter 520ms ease, clip-path 520ms ease;
+}
+
+.reveal.scan-active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0.9;
+  animation: scanner 720ms ease-out;
+}
+
+.tilt {
+  transition: transform 220ms ease, border-color 220ms ease;
+  transform-style: preserve-3d;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.45;
+  }
+}
+
+@keyframes drift {
+  from {
+    transform: translateY(-2%) translateX(-1%);
+  }
+  to {
+    transform: translateY(2%) translateX(1%);
+  }
+}
+
+@keyframes scanner {
+  from {
+    transform: translateY(-2px);
+    opacity: 0.2;
+  }
+  35% {
+    opacity: 0.95;
+  }
+  to {
+    transform: translateY(44px);
+    opacity: 0;
+  }
+}
