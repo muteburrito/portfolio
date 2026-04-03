@@ -116,6 +116,10 @@
     height: 180px;
   }
 
+  .loc-map-shell {
+    padding: 0.5rem;
+  }
+
   .loc-map-toolbar {
     gap: 0.4rem;
   }
@@ -133,6 +137,7 @@
     inset: 0.5rem;
     padding: 0.65rem;
   }
+
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -144,4 +149,5 @@
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+
 }
