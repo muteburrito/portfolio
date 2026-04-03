@@ -229,6 +229,17 @@ section.cli-enter.cli-enter-active {
   }
 }
 
+@keyframes locRing {
+  0% {
+    transform: translate(-50%, -50%) scale(0.4);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2.2);
+    opacity: 0;
+  }
+}
+
 @keyframes flowStep {
   0% {
     color: var(--ink-soft);

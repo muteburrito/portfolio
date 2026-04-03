@@ -1,5 +1,6 @@
 @media (max-width: 1040px) {
   .lab-grid,
+  .loc-grid,
   .profile-grid,
   .outcome-grid,
   .case-grid,
@@ -60,6 +61,7 @@
 
   .metric-grid,
   .lab-grid,
+  .loc-grid,
   .profile-grid,
   .outcome-grid,
   .case-grid,

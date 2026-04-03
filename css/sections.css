@@ -145,6 +145,184 @@
   border-color: rgba(95, 244, 183, 0.58);
 }
 
+.location {
+  border-color: rgba(54, 184, 255, 0.55);
+}
+
+.loc-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.loc-pill {
+  border-color: rgba(54, 184, 255, 0.6);
+  color: #a8dcff;
+  background: rgba(10, 48, 90, 0.35);
+}
+
+.loc-terminal {
+  border: 1px solid rgba(54, 184, 255, 0.42);
+  border-radius: 13px;
+  background: rgba(4, 11, 18, 0.88);
+  padding: 0.8rem 0.95rem;
+  font-family: "IBM Plex Mono", monospace;
+  margin-bottom: 0.85rem;
+}
+
+.loc-output {
+  margin-top: 0.55rem;
+}
+
+.loc-output p {
+  margin: 0.2rem 0;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  display: flex;
+  gap: 0.5rem;
+}
+
+.loc-key {
+  color: var(--accent-2);
+  min-width: 9ch;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.loc-val {
+  color: var(--ink);
+}
+
+.loc-ok {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.loc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.loc-card {
+  position: relative;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 0.9rem;
+  background: rgba(7, 18, 29, 0.75);
+  transition: transform 220ms ease, border-color 220ms ease;
+}
+
+.loc-card::before {
+  content: "";
+  position: absolute;
+  top: 0.7rem;
+  right: 0.72rem;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: var(--accent-2);
+  box-shadow: 0 0 8px var(--accent-2);
+  animation: labPulse 1.9s ease-in-out infinite;
+}
+
+.loc-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(54, 184, 255, 0.62);
+}
+
+.loc-card h3 {
+  margin-bottom: 0.4rem;
+}
+
+.loc-primary {
+  margin: 0 0 0.5rem;
+  color: var(--accent-2);
+  font-size: clamp(0.95rem, 2vw, 1.15rem);
+  font-weight: 700;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.loc-card ul {
+  margin: 0;
+  padding-left: 1rem;
+  color: var(--ink-soft);
+}
+
+.loc-card ul li {
+  margin: 0.18rem 0;
+}
+
+#loc-clock {
+  font-style: normal;
+  color: var(--accent);
+}
+
+#loc-map {
+  height: 220px;
+  border-radius: 13px;
+  border: 1px solid rgba(54, 184, 255, 0.42);
+  overflow: hidden;
+  margin-bottom: 0.45rem;
+  background: rgba(4, 11, 18, 0.88);
+}
+
+.leaflet-container {
+  background: #020c14;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.leaflet-tile-pane {
+  filter: brightness(0.9) saturate(0.65);
+}
+
+.loc-map-link {
+  display: inline-block;
+  margin-bottom: 0.85rem;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.78rem;
+  color: var(--accent-2);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: color 180ms ease;
+}
+
+.loc-map-link:hover {
+  color: var(--ink);
+}
+
+.loc-marker {
+  position: relative;
+  width: 32px;
+  height: 32px;
+}
+
+.loc-marker-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent-2);
+  box-shadow: 0 0 16px var(--accent-2);
+  animation: pulse 1.4s ease-in-out infinite;
+}
+
+.loc-marker-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid rgba(54, 184, 255, 0.7);
+  animation: locRing 2.2s ease-out infinite;
+}
+
 .homelab {
   border-color: rgba(154, 136, 255, 0.55);
 }
