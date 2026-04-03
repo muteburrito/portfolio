@@ -34,7 +34,7 @@ When you deploy any frontend change, bump the build version in `index.html`:
 - `styles.css?v=...`
 - `js/main.js?v=...`
 
-Example: change `2026-04-03-1` to `2026-04-03-2`.
+Example: change `2026-04-03-3` to `2026-04-03-4`.
 
 This forces browsers to fetch the latest assets and partials.
 
@@ -75,7 +75,7 @@ Run these after deployment:
 ```bash
 git -C /var/www/portfolio rev-parse --short HEAD
 curl -I https://your-domain.example | head -n 20
-curl -I https://your-domain.example/styles.css?v=2026-04-03-1 | head -n 20
+curl -I https://your-domain.example/styles.css?v=2026-04-03-3 | head -n 20
 ```
 
 Then test in browser:

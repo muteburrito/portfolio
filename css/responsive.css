@@ -116,8 +116,22 @@
     height: 180px;
   }
 
+  .loc-map-toolbar {
+    gap: 0.4rem;
+  }
+
+  .loc-map-btn {
+    font-size: 0.72rem;
+    padding: 0.34rem 0.5rem;
+  }
+
   .loc-output p {
     font-size: 0.78rem;
+  }
+
+  .loc-map-shell--expanded {
+    inset: 0.5rem;
+    padding: 0.65rem;
   }
 }
 

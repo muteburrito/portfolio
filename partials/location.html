@@ -5,7 +5,7 @@
   </div>
 
   <p class="section-intro">
-    Based in Pune, India. Working remotely and open to async collaboration across time zones.
+    Based in Pune, India. Open to async collaboration across time zones.
   </p>
 
   <div class="loc-terminal reveal">
@@ -20,7 +20,24 @@
     </div>
   </div>
 
-  <div id="loc-map" aria-label="Map showing location in Pune, India"></div>
+  <div class="loc-map-shell" id="loc-map-shell">
+    <div class="loc-map-toolbar">
+      <button
+        type="button"
+        class="loc-map-btn"
+        id="loc-map-expand"
+        aria-controls="loc-map"
+        aria-expanded="false"
+      >Expand Map</button>
+      <button type="button" class="loc-map-btn" id="loc-map-geolocate">Find My Distance</button>
+      <button type="button" class="loc-map-btn" id="loc-map-manual">Set Location Manually</button>
+      <button type="button" class="loc-map-btn" id="loc-map-reset">Reset Map</button>
+      <p id="loc-distance-status" class="loc-distance-status" aria-live="polite">
+        Distance unavailable until you share location.
+      </p>
+    </div>
+    <div id="loc-map" aria-label="Map showing location in Pune, India"></div>
+  </div>
   <a
     class="loc-map-link"
     href="https://www.google.com/maps/place/Navasahyadri+Society,+Ganesh+Nagar,+Karvenagar,+Pune,+Maharashtra+411052/@18.4950598,73.8294085,17z"
