@@ -111,6 +111,14 @@
     width: calc(100vw - 1rem);
     border-radius: 14px;
   }
+
+  #loc-map {
+    height: 180px;
+  }
+
+  .loc-output p {
+    font-size: 0.78rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

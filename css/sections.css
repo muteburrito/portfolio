@@ -182,6 +182,7 @@
   color: var(--ink-soft);
   display: flex;
   gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
 .loc-key {
@@ -193,6 +194,7 @@
 
 .loc-val {
   color: var(--ink);
+  overflow-wrap: anywhere;
 }
 
 .loc-ok {
