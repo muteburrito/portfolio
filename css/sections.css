@@ -635,6 +635,8 @@ body.loc-map-expanded {
     width: 2px;
     height: 14px;
     margin-left: 0.9rem;
+    transform-origin: center top;
+    animation: linkPulseVertical 1.8s ease-in-out infinite;
   }
 
   .flow-node {
@@ -643,7 +645,18 @@ body.loc-map-expanded {
   }
 
   .flow-beam {
-    display: none;
+    display: block;
+    left: 1rem;
+    top: 0;
+    width: 14px;
+    height: 14px;
+    transform: translateY(0);
+    animation: beamRunVertical 4.8s linear infinite;
+  }
+
+  #loc-map::after {
+    mix-blend-mode: normal;
+    opacity: 0.62;
   }
 }
 

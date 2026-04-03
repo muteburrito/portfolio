@@ -214,6 +214,21 @@ section.cli-enter.cli-enter-active {
   }
 }
 
+@keyframes linkPulseVertical {
+  0% {
+    opacity: 0.35;
+    transform: scaleY(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  100% {
+    opacity: 0.35;
+    transform: scaleY(0.85);
+  }
+}
+
 @keyframes updateSweep {
   from {
     transform: translateX(-110%);
@@ -262,6 +277,23 @@ section.cli-enter.cli-enter-active {
   }
   100% {
     transform: translateY(130%);
+    opacity: 0;
+  }
+}
+
+@keyframes beamRunVertical {
+  0% {
+    top: 0;
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.95;
+  }
+  90% {
+    opacity: 0.9;
+  }
+  100% {
+    top: calc(100% - 16px);
     opacity: 0;
   }
 }
