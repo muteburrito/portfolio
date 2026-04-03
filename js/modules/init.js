@@ -65,6 +65,8 @@ export function initSiteInteractions() {
     let manualPickMode = false;
     let userMarker = null;
     let userLine = null;
+    let mapHomeParent = null;
+    let mapHomeNextSibling = null;
 
     const leafletMap = L.map('loc-map', {
       center: [LAT, LNG],
@@ -135,7 +137,19 @@ export function initSiteInteractions() {
         return;
       }
 
+      if (!mapHomeParent) {
+        mapHomeParent = mapShell.parentElement;
+        mapHomeNextSibling = mapShell.nextSibling;
+      }
+
       mapExpanded = expanded;
+
+      if (expanded) {
+        document.body.appendChild(mapShell);
+      } else if (mapHomeParent) {
+        mapHomeParent.insertBefore(mapShell, mapHomeNextSibling);
+      }
+
       mapShell.classList.toggle('loc-map-shell--expanded', expanded);
       document.body.classList.toggle('loc-map-expanded', expanded);
       expandButton.setAttribute('aria-expanded', expanded ? 'true' : 'false');

@@ -69,6 +69,27 @@
   .stack-groups {
     grid-template-columns: 1fr;
   }
+
+  .loc-map-shell--expanded {
+    inset: calc(env(safe-area-inset-top, 0px) + 5.2rem) 0.55rem 0.55rem;
+    padding: 0.55rem;
+  }
+
+  .loc-map-shell--expanded .loc-map-toolbar {
+    gap: 0.34rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .loc-map-shell--expanded .loc-map-btn {
+    min-height: 2.1rem;
+    font-size: 0.7rem;
+    padding: 0.32rem 0.46rem;
+  }
+
+  .loc-map-shell--expanded .loc-distance-status {
+    font-size: 0.7rem;
+    line-height: 1.35;
+  }
 }
 
 @media (min-width: 761px) {
@@ -134,8 +155,8 @@
   }
 
   .loc-map-shell--expanded {
-    inset: 0.5rem;
-    padding: 0.65rem;
+    inset: calc(env(safe-area-inset-top, 0px) + 4.9rem) 0.4rem 0.4rem;
+    padding: 0.5rem;
   }
 
 }
